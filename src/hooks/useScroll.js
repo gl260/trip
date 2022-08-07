@@ -25,7 +25,7 @@ import { throttle } from "underscore";
 export default function useScroll(elRef) {
   let el = window;
 
-  const isScrollButtom = ref(false);
+  const isScrollButtom = ref(false); // watch要监听这个值,当到达底部时,变为true watch就可以侦听到值的改变,从而发送网络请求
 
   const clientHeight = ref(0);
   const scrollTop = ref(0);

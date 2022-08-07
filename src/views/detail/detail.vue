@@ -115,8 +115,9 @@ const getSectionRef = (value) => {
 let isClick = false;
 let currentDistance = null;
 const tabClick = (index) => {
-  const key = Object.keys(sectionEls.value)[index]; //获取
-  const el = sectionEls.value[key];
+  // console.log(index); // index是tab-control组件传过来的值
+  const key = Object.keys(sectionEls.value)[index]; //获取对应的key
+  const el = sectionEls.value[key]; // 通过key获取值,也就是对应的DOM对象
   let distance = el.offsetTop - 44; // offsetTop : 返回当前元素相对于其 offsetParent 元素的顶部内边距的距离。
   if (index === 0) {
     distance = 0;

@@ -11,15 +11,9 @@
           <!-- {{ active + 1 }}/{{ total }}-{{ swipeData.length }} -->
           <template v-for="(value, key, index) in swipeGroup" :key="index">
             <!-- swipeData.enumPictureCategory与key的值相等时,就表示活跃状态 -->
-            <span
-              class="item"
-              :class="{ active: swipeData[active]?.enumPictureCategory == key }"
-            >
+            <span class="item" :class="{ active: swipeData[active]?.enumPictureCategory == key }">
               <span class="text">{{ getTitle(value[0].title) }}</span>
-              <span
-                class="count"
-                v-if="swipeData[active]?.enumPictureCategory == key"
-              >
+              <span class="count" v-if="swipeData[active]?.enumPictureCategory == key">
                 {{ getCurrentIndex(swipeData[active]) }}/{{ value.length }}
               </span>
             </span>
@@ -55,14 +49,14 @@ const getTitle = (title) => {
 };
 
 // 思路:  swipeData[0]
-//       在{ [], [], [], []... }找到enumPictureCategory - (2,4,9)
+//       在[ {}, {}, {}, {}... ]找到enumPictureCategory - (2,4,9)
 //       然后通过 { 2: [], 4:[], 9:[] }
 const getCurrentIndex = (item) => {
   const group = swipeGroup[item.enumPictureCategory]; //swipeGroip[2]
   return group.findIndex((index) => index === item) + 1;
 };
 
-// 数据转换一:  { [], [], [], []... } --> { 2: [], 4:[], 9:[] }
+// 数据转换一:  [ {}, {}, {}, {}... ] --> { 2: [], 4:[], 9:[] }
 // for (const item of props.swipeData) {
 //   swipeGroup[item.enumPictureCategory] = [];
 //   // { 2: [], 4:[], 9:[] } ,是key为2,4,9  value在下一个循环中获取
