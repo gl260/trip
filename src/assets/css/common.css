@@ -1,0 +1,51 @@
+:root{
+  --primary-color: #ff9854;
+
+  /* 修改tarbar的字体颜色 */
+  --van-tabbar-item-active-color: var(--primary-color) !important;
+
+  /* 修改搜索框图标颜色 */
+  --van-search-left-icon-color: var(--primary-color) !important;
+
+  /* 日期占屏宽度 */
+  --van-calendar-popup-height: 100% !important;
+
+  /* 下拉菜单,标题文字大小 */
+  --van-dropdown-menu-title-font-size: 13px !important;
+
+  /* 按钮主题色渐变 */
+  --theme-linear-gradient: linear-gradient(90deg,#fa8c1d,#fcaf3f);
+}
+
+body{
+  font-size: 14px;
+}
+
+.ellipsis-1{
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+}
+.ellipsis-2{
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+}
+.ellipsis-3{
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+}
+
+.top-page {
+  position: relative;
+  z-index: 9;
+  height: 100vh;
+  background-color: #fff;
+
+  overflow-y: auto;
+}
