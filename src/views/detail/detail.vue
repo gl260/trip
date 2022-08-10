@@ -53,6 +53,7 @@
 
       <detail-pricedesc :pricedesc-data="mainPart.introductionModule" />
       <detail-footer :guarantee-data="mainPart.ensureModule" />
+      <detail-bprice :bprice-data="detailInfos.pricePart.priceModule.product" />
     </div>
   </div>
 </template>
@@ -76,6 +77,7 @@ import detailNotice from "./cpns/detail_06-notice.vue";
 import detailMap from "./cpns/detail_07-map.vue";
 import detailPricedesc from "./cpns/detail_08-pricedesc.vue";
 import detailFooter from "./cpns/detail_09-footer.vue";
+import detailBprice from "./cpns/detail_10-bprice.vue";
 
 /**
  * route: 路线      useRoute: 返回当前路由地址 相当于在模板中使用 $route
@@ -168,6 +170,7 @@ watch(scrollTop, (newValue) => {
 
 <style lang="less" scoped>
 .detail {
+  margin-bottom: 60px;
   .tab-control {
     position: fixed;
     top: 0;
