@@ -12,6 +12,13 @@ const router = createRouter({
       component: () => import("@/views/home/home.vue"),
     },
     {
+      path: "/login",
+      component: () => import("@/views/login/login.vue"),
+      meta: {
+        currentShow: true,
+      },
+    },
+    {
       path: "/favor",
       component: () => import("@/views/favor/favor.vue"),
     },

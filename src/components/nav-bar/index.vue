@@ -34,7 +34,7 @@
           <span>首页</span>
         </div>
         <van-divider />
-        <div class="item login-registration">
+        <div class="item login-registration" @click="onLogin">
           <img src="@/assets/img/popup/login-registration.png" alt="" />
           <span>登录/注册</span>
         </div>
@@ -51,6 +51,9 @@ import { useRouter } from "vue-router";
 const router = useRouter();
 const onClickLeft = () => {
   router.back();
+};
+const onLogin = () => {
+  router.push("/login");
 };
 
 const popupShow = ref(false);
